@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure>
+  <type>fa</type>
+  <automaton>
+    <state id="0" name="q0">
+      <x>75</x>
+      <y>90</y>
+      <initial/>
+    </state>
+    <state id="1" name="q1">
+      <x>210</x>
+      <y>90</y>
+      <final/>
+      <label>SKIP</label>
+    </state>
+    <transition><from>0</from><to>1</to><read> </read></transition>
+    <transition><from>0</from><to>1</to><read>&#9;</read></transition>
+    <transition><from>0</from><to>1</to><read>&#13;</read></transition>
+    <transition><from>0</from><to>1</to><read>&#10;</read></transition>
+    <transition><from>1</from><to>1</to><read> </read></transition>
+    <transition><from>1</from><to>1</to><read>&#9;</read></transition>
+    <transition><from>1</from><to>1</to><read>&#13;</read></transition>
+    <transition><from>1</from><to>1</to><read>&#10;</read></transition>
+  </automaton>
+</structure>

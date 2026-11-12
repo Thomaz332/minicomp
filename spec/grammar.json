@@ -1,0 +1,78 @@
+{
+  "Program": [
+    "StmtList"
+  ],
+  "StmtList": [
+    "Stmt StmtList",
+    ""
+  ],
+  "Stmt": [
+    "Assign SEMI",
+    "Write SEMI",
+    "Read SEMI",
+    "If",
+    "While"
+  ],
+  "Assign": [
+    "ID ASSIGN Expr"
+  ],
+  "Write": [
+    "KW_WRITE LP Expr RP"
+  ],
+  "Read": [
+    "KW_READ LP ID RP"
+  ],
+  "If": [
+    "KW_IF Expr KW_THEN StmtList Else KW_END"
+  ],
+  "Else": [
+    "KW_ELSE StmtList",
+    ""
+  ],
+  "While": [
+    "KW_WHILE Expr KW_DO StmtList KW_END"
+  ],
+  "Expr": [
+    "Simple RelTail"
+  ],
+  "RelTail": [
+    "RelOp Simple",
+    ""
+  ],
+  "RelOp": [
+    "EQ",
+    "NE",
+    "LT",
+    "LE",
+    "GT",
+    "GE"
+  ],
+  "Simple": [
+    "Mul AddTail"
+  ],
+  "AddTail": [
+    "AddOp Mul AddTail",
+    ""
+  ],
+  "AddOp": [
+    "PLUS",
+    "MINUS"
+  ],
+  "Mul": [
+    "Primary MulTail"
+  ],
+  "MulTail": [
+    "MulOp Primary MulTail",
+    ""
+  ],
+  "MulOp": [
+    "STAR",
+    "SLASH",
+    "MOD"
+  ],
+  "Primary": [
+    "ID",
+    "INTEGER",
+    "LP Expr RP"
+  ]
+}

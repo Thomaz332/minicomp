@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure>
+  <type>fa</type>
+  <automaton>
+    <state id="0" name="q0">
+      <x>75</x>
+      <y>90</y>
+      <initial/>
+    </state>
+    <state id="1" name="q1">
+      <x>210</x>
+      <y>90</y>
+    </state>
+    <state id="2" name="q2">
+      <x>345</x>
+      <y>90</y>
+    </state>
+    <state id="3" name="q3">
+      <x>480</x>
+      <y>90</y>
+    </state>
+    <state id="4" name="q4">
+      <x>615</x>
+      <y>90</y>
+      <final/>
+      <label>KW_READ</label>
+    </state>
+    <state id="5" name="q5">
+      <x>750</x>
+      <y>90</y>
+    </state>
+    <state id="6" name="q6">
+      <x>885</x>
+      <y>90</y>
+    </state>
+    <state id="7" name="q7">
+      <x>1020</x>
+      <y>90</y>
+    </state>
+    <state id="8" name="q8">
+      <x>75</x>
+      <y>190</y>
+    </state>
+    <state id="9" name="q9">
+      <x>210</x>
+      <y>190</y>
+      <final/>
+      <label>KW_WRITE</label>
+    </state>
+    <state id="10" name="q10">
+      <x>345</x>
+      <y>190</y>
+    </state>
+    <state id="11" name="q11">
+      <x>480</x>
+      <y>190</y>
+      <final/>
+      <label>KW_IF</label>
+    </state>
+    <state id="12" name="q12">
+      <x>615</x>
+      <y>190</y>
+    </state>
+    <state id="13" name="q13">
+      <x>750</x>
+      <y>190</y>
+    </state>
+    <state id="14" name="q14">
+      <x>885</x>
+      <y>190</y>
+    </state>
+    <state id="15" name="q15">
+      <x>1020</x>
+      <y>190</y>
+      <final/>
+      <label>KW_THEN</label>
+    </state>
+    <state id="16" name="q16">
+      <x>75</x>
+      <y>290</y>
+    </state>
+    <state id="17" name="q17">
+      <x>210</x>
+      <y>290</y>
+    </state>
+    <state id="18" name="q18">
+      <x>345</x>
+      <y>290</y>
+    </state>
+    <state id="19" name="q19">
+      <x>480</x>
+      <y>290</y>
+      <final/>
+      <label>KW_ELSE</label>
+    </state>
+    <state id="20" name="q20">
+      <x>615</x>
+      <y>290</y>
+    </state>
+    <state id="21" name="q21">
+      <x>750</x>
+      <y>290</y>
+    </state>
+    <state id="22" name="q22">
+      <x>885</x>
+      <y>290</y>
+    </state>
+    <state id="23" name="q23">
+      <x>1020</x>
+      <y>290</y>
+      <final/>
+      <label>KW_WHILE</label>
+    </state>
+    <state id="24" name="q24">
+      <x>75</x>
+      <y>390</y>
+    </state>
+    <state id="25" name="q25">
+      <x>210</x>
+      <y>390</y>
+      <final/>
+      <label>KW_DO</label>
+    </state>
+    <state id="26" name="q26">
+      <x>345</x>
+      <y>390</y>
+    </state>
+    <state id="27" name="q27">
+      <x>480</x>
+      <y>390</y>
+      <final/>
+      <label>KW_END</label>
+    </state>
+    <transition><from>0</from><to>1</to><read>r</read></transition>
+    <transition><from>1</from><to>2</to><read>e</read></transition>
+    <transition><from>2</from><to>3</to><read>a</read></transition>
+    <transition><from>3</from><to>4</to><read>d</read></transition>
+    <transition><from>0</from><to>5</to><read>w</read></transition>
+    <transition><from>5</from><to>6</to><read>r</read></transition>
+    <transition><from>6</from><to>7</to><read>i</read></transition>
+    <transition><from>7</from><to>8</to><read>t</read></transition>
+    <transition><from>8</from><to>9</to><read>e</read></transition>
+    <transition><from>0</from><to>10</to><read>i</read></transition>
+    <transition><from>10</from><to>11</to><read>f</read></transition>
+    <transition><from>0</from><to>12</to><read>t</read></transition>
+    <transition><from>12</from><to>13</to><read>h</read></transition>
+    <transition><from>13</from><to>14</to><read>e</read></transition>
+    <transition><from>14</from><to>15</to><read>n</read></transition>
+    <transition><from>0</from><to>16</to><read>e</read></transition>
+    <transition><from>16</from><to>17</to><read>l</read></transition>
+    <transition><from>17</from><to>18</to><read>s</read></transition>
+    <transition><from>18</from><to>19</to><read>e</read></transition>
+    <transition><from>5</from><to>20</to><read>h</read></transition>
+    <transition><from>20</from><to>21</to><read>i</read></transition>
+    <transition><from>21</from><to>22</to><read>l</read></transition>
+    <transition><from>22</from><to>23</to><read>e</read></transition>
+    <transition><from>0</from><to>24</to><read>d</read></transition>
+    <transition><from>24</from><to>25</to><read>o</read></transition>
+    <transition><from>16</from><to>26</to><read>n</read></transition>
+    <transition><from>26</from><to>27</to><read>d</read></transition>
+  </automaton>
+</structure>
