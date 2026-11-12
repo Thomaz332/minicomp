@@ -92,7 +92,7 @@
     <transition><from>2</from><to>2</to><read>X</read></transition>
     <transition><from>2</from><to>2</to><read>Y</read></transition>
     <transition><from>2</from><to>2</to><read>Z</read></transition>
-    <transition><from>2</from><to>2</to><read>[</read></transition>
+    <transition><from>2</from><to>2</to><read>[[-[]</read></transition>
     <transition><from>2</from><to>2</to><read>\</read></transition>
     <transition><from>2</from><to>2</to><read>]</read></transition>
     <transition><from>2</from><to>2</to><read>^</read></transition>
@@ -189,7 +189,7 @@
     <transition><from>3</from><to>3</to><read>X</read></transition>
     <transition><from>3</from><to>3</to><read>Y</read></transition>
     <transition><from>3</from><to>3</to><read>Z</read></transition>
-    <transition><from>3</from><to>3</to><read>[</read></transition>
+    <transition><from>3</from><to>3</to><read>[[-[]</read></transition>
     <transition><from>3</from><to>3</to><read>\</read></transition>
     <transition><from>3</from><to>3</to><read>]</read></transition>
     <transition><from>3</from><to>3</to><read>^</read></transition>
@@ -287,7 +287,7 @@
     <transition><from>4</from><to>3</to><read>X</read></transition>
     <transition><from>4</from><to>3</to><read>Y</read></transition>
     <transition><from>4</from><to>3</to><read>Z</read></transition>
-    <transition><from>4</from><to>3</to><read>[</read></transition>
+    <transition><from>4</from><to>3</to><read>[[-[]</read></transition>
     <transition><from>4</from><to>3</to><read>\</read></transition>
     <transition><from>4</from><to>3</to><read>]</read></transition>
     <transition><from>4</from><to>3</to><read>^</read></transition>

@@ -86,7 +86,7 @@ for (const machine of all) {
       '    </state>'
     ].join('\n')),
     ...edges.map(([from, to, char]) => '    <transition><from>' + from + '</from><to>' + to +
-      '</to><read>' + xml(char) + '</read></transition>'),
+      '</to><read>' + xml(char === '[' ? '[[-[]' : char) + '</read></transition>'),
     '  </automaton>', '</structure>', ''].join('\n');
   fs.writeFileSync(new URL('jflap/' + machine.name + '.jff', root), document);
 }
