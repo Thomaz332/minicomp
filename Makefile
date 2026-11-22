@@ -14,6 +14,7 @@ $(BIN): src/main.cpp src/interpreter.inc src/grammar.generated.hpp src/lexer.gen
 
 test: $(BIN)
 	node tests/run.mjs
+	node tests/interpreter.test.mjs
 
 regenerate:
 	node tools/generate-grammar.mjs

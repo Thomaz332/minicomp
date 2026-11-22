@@ -1,6 +1,23 @@
 class Interpreter {
     using Integer = std::uint64_t;
     std::map<std::string, Integer> memory;
+    bool tracing;
+    std::size_t traceStep = 0;
+
+    void trace(const Ast& node, const std::string& event) {
+        if (!tracing) return;
+        std::cerr << "[trace " << ++traceStep << "] " << node.position.line << ':'
+                  << node.position.column << ' ' << event << '\n';
+    }
+
+    void initialize(const Ast& node) {
+        if (node.kind == "ID" || node.kind == "Assign" || node.kind == "Read") {
+            if (memory.try_emplace(node.value, 0).second) {
+                trace(node, "init " + node.value + " = 0");
+            }
+        }
+        for (const auto& child : node.children) initialize(child);
+    }
 
     static Integer parseNumber(const std::string& text, Position at) {
         Integer value = 0;
@@ -15,11 +32,7 @@ class Interpreter {
     Integer evaluate(const Ast& node) const {
         if (node.kind == "INTEGER") return parseNumber(node.value, node.position);
         if (node.kind == "ID") {
-            const auto item = memory.find(node.value);
-            if (item == memory.end()) {
-                throw Diagnostic("erro semântico: variável sem valor " + node.value, node.position);
-            }
-            return item->second;
+            return memory.at(node.value);
         }
 
         const auto left = evaluate(node.children[0]);
@@ -45,23 +58,55 @@ class Interpreter {
         throw Diagnostic("erro semântico: estouro aritmético", node.position);
     }
 
-public:
-    void execute(const Ast& node) {
+    void executeNode(const Ast& node) {
         if (node.kind == "Program" || node.kind == "Block") {
-            for (const auto& child : node.children) execute(child);
+            for (const auto& child : node.children) executeNode(child);
         } else if (node.kind == "Assign") {
-            memory[node.value] = evaluate(node.children[0]);
+            const auto value = evaluate(node.children[0]);
+            const auto previous = memory.at(node.value);
+            memory.at(node.value) = value;
+            trace(node, "assign " + node.value + ": " + std::to_string(previous) +
+                " -> " + std::to_string(value));
         } else if (node.kind == "Read") {
             std::string text;
             if (!(std::cin >> text)) throw Diagnostic("erro semântico: entrada ausente", node.position);
-            memory[node.value] = parseNumber(text, node.position);
+            const auto value = parseNumber(text, node.position);
+            const auto previous = memory.at(node.value);
+            memory.at(node.value) = value;
+            trace(node, "read " + node.value + ": " + std::to_string(previous) +
+                " -> " + std::to_string(value));
         } else if (node.kind == "Write") {
-            std::cout << evaluate(node.children[0]) << '\n';
+            const auto value = evaluate(node.children[0]);
+            std::cout << value << '\n';
+            trace(node, "write " + std::to_string(value));
         } else if (node.kind == "If") {
-            if (evaluate(node.children[0]) != 0) execute(node.children[1]);
-            else if (node.children.size() == 3) execute(node.children[2]);
+            const auto condition = evaluate(node.children[0]);
+            trace(node, "if " + std::to_string(condition) +
+                (condition != 0 ? " -> then" : " -> else/skip"));
+            if (condition != 0) executeNode(node.children[1]);
+            else if (node.children.size() == 3) executeNode(node.children[2]);
         } else if (node.kind == "While") {
-            while (evaluate(node.children[0]) != 0) execute(node.children[1]);
+            while (true) {
+                const auto condition = evaluate(node.children[0]);
+                trace(node, "while " + std::to_string(condition) +
+                    (condition != 0 ? " -> body" : " -> exit"));
+                if (condition == 0) break;
+                executeNode(node.children[1]);
+            }
         }
+    }
+
+public:
+    explicit Interpreter(bool enableTrace = false) : tracing(enableTrace) {}
+
+    void execute(const Ast& program) {
+        memory.clear();
+        traceStep = 0;
+        initialize(program);
+        executeNode(program);
+        for (const auto& [name, value] : memory) {
+            trace(program, "final " + name + " = " + std::to_string(value));
+        }
+        trace(program, "done");
     }
 };

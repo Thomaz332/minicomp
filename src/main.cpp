@@ -238,8 +238,9 @@ void printAst(const Ast& node, std::size_t depth = 0) {
 
 int main(int argc, char** argv) {
     const std::string_view mode = argc == 3 ? argv[1] : "";
-    if (argc != 2 && (argc != 3 || (mode != "--tokens" && mode != "--run" && mode != "--symbols"))) {
-        std::cerr << "Uso: minicomp [--tokens | --symbols | --run] <arquivo>\n";
+    if (argc != 2 && (argc != 3 || (mode != "--tokens" && mode != "--run" &&
+        mode != "--symbols" && mode != "--trace"))) {
+        std::cerr << "Uso: minicomp [--tokens | --symbols | --run | --trace] <arquivo>\n";
         return 2;
     }
     const std::string file = argv[argc - 1];
@@ -277,7 +278,7 @@ int main(int argc, char** argv) {
             }
             if (!errors.empty()) return 1;
             const auto ast = lower(syntax);
-            if (mode == "--run") Interpreter{}.execute(ast);
+            if (mode == "--run" || mode == "--trace") Interpreter{mode == "--trace"}.execute(ast);
             else printAst(ast);
         }
         return 0;

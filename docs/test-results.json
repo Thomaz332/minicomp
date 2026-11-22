@@ -1,0 +1,210 @@
+{
+  "executedAt": "2026-11-22T18:08:21.569Z",
+  "platform": "win32",
+  "node": "v24.15.0",
+  "total": 50,
+  "passed": 50,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Fatorial de 5",
+      "status": "passed"
+    },
+    {
+      "name": "Fatorial de 0",
+      "status": "passed"
+    },
+    {
+      "name": "Máximo pelo ramo else",
+      "status": "passed"
+    },
+    {
+      "name": "Máximo pelo ramo then",
+      "status": "passed"
+    },
+    {
+      "name": "Máximo com valores iguais",
+      "status": "passed"
+    },
+    {
+      "name": "Soma até zero",
+      "status": "passed"
+    },
+    {
+      "name": "Soma com sentinela inicial",
+      "status": "passed"
+    },
+    {
+      "name": "Zero inicial inclusive em ramo não executado",
+      "status": "passed"
+    },
+    {
+      "name": "Programa vazio",
+      "status": "passed"
+    },
+    {
+      "name": "Autorreferência usa zero inicial",
+      "status": "passed"
+    },
+    {
+      "name": "Escopo global entre blocos",
+      "status": "passed"
+    },
+    {
+      "name": "If falso sem else",
+      "status": "passed"
+    },
+    {
+      "name": "Condição inteira não nula",
+      "status": "passed"
+    },
+    {
+      "name": "While falso não executa corpo",
+      "status": "passed"
+    },
+    {
+      "name": "Laços e condicionais aninhados",
+      "status": "passed"
+    },
+    {
+      "name": "Precedência aritmética",
+      "status": "passed"
+    },
+    {
+      "name": "Associatividade da subtração e divisão",
+      "status": "passed"
+    },
+    {
+      "name": "Divisão inteira e resto",
+      "status": "passed"
+    },
+    {
+      "name": "Limite superior uint64",
+      "status": "passed"
+    },
+    {
+      "name": "Multiplicação por zero",
+      "status": "passed"
+    },
+    {
+      "name": "Subtração resulta em zero",
+      "status": "passed"
+    },
+    {
+      "name": "Comentários e linhas CRLF",
+      "status": "passed"
+    },
+    {
+      "name": "Identificador com prefixo reservado",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional =",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional !=",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional <",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional <=",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional >",
+      "status": "passed"
+    },
+    {
+      "name": "Relacional >=",
+      "status": "passed"
+    },
+    {
+      "name": "Resto por zero",
+      "status": "passed"
+    },
+    {
+      "name": "Resultado negativo",
+      "status": "passed"
+    },
+    {
+      "name": "Overflow na soma",
+      "status": "passed"
+    },
+    {
+      "name": "Overflow no produto",
+      "status": "passed"
+    },
+    {
+      "name": "Literal fora de uint64",
+      "status": "passed"
+    },
+    {
+      "name": "Leitura ausente",
+      "status": "passed"
+    },
+    {
+      "name": "Leitura negativa",
+      "status": "passed"
+    },
+    {
+      "name": "Leitura não numérica",
+      "status": "passed"
+    },
+    {
+      "name": "Leitura parcialmente numérica",
+      "status": "passed"
+    },
+    {
+      "name": "Leitura fora de uint64",
+      "status": "passed"
+    },
+    {
+      "name": "Parêntese ausente",
+      "status": "passed"
+    },
+    {
+      "name": "End ausente",
+      "status": "passed"
+    },
+    {
+      "name": "Literal negativo não pertence à sintaxe",
+      "status": "passed"
+    },
+    {
+      "name": "Diagnóstico após CRLF",
+      "status": "passed"
+    },
+    {
+      "name": "Trace preserva stdout e registra decisões, memória e posições",
+      "status": "passed"
+    },
+    {
+      "name": "Trace registra else e não executa then",
+      "status": "passed"
+    },
+    {
+      "name": "Trace não sinaliza sucesso após erro",
+      "status": "passed"
+    },
+    {
+      "name": "Erro sintático impede execução parcial",
+      "status": "passed"
+    },
+    {
+      "name": "CLI rejeita opção desconhecida",
+      "status": "passed"
+    },
+    {
+      "name": "CLI rejeita arquivo ausente",
+      "status": "passed"
+    },
+    {
+      "name": "CLI sem argumentos informa uso",
+      "status": "passed"
+    }
+  ]
+}
